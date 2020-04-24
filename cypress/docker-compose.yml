@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  frontend:
+    image: clines
+    environment:
+      CLINES_API_URL: http://backend:8080
+    ports:
+    - 3000:3000
+
+  backend:
+    image: springcloud/spring-cloud-contract-stub-runner:2.1.4.RELEASE
+    environment:
+      STUBRUNNER_IDS: me.github.fwfurtado:clines-api:+:stubs:9876
+      STUBRUNNER_REPOSITORY_ROOT: git://https://github.com/fwfurtado/clines-contract.git
+      STUBRUNNER_STUBS_MODE: REMOTE
+      STUBRUNNER_PORT: 8083
+    ports:
+    - 9876:9876
+    - 8083:8083

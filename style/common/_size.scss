@@ -1,0 +1,19 @@
+$sizes: ("small": 1em,
+        "medium": 1.5em,
+        "large": 2em,
+        "xlarge": 2.5em,
+        "xxlarge": 3em);
+
+$weight: ("small": lighter,
+        "medium": normal,
+        "large": bold,
+        "xlarge": bolder,
+        "xxlarge": bolder);
+
+@function of($size) {
+  @return map-get($sizes, $size)
+}
+
+@function weight-of($size) {
+  @return map-get($weight, $size)
+}

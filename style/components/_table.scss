@@ -1,0 +1,68 @@
+@use "text";
+@use "../common/size";
+@use "../common/color";
+@use "../common/font";
+
+.table-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: color.with-name(light-gray);
+  overflow-x: auto;
+}
+
+.table-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  line-height: size.of(medium);
+  margin: {
+    top: 1em;
+    left: 1em;
+    right: 1em;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+  margin: auto;
+
+}
+
+th, td {
+  padding: 1.5em;
+  text-align: center;
+  font-size: size.of(small);
+}
+
+th {
+  @include text.to(upper);
+  @include font.of(roboto, medium);
+  font-weight: bolder;
+  color: color.with-name(dark-gray);
+}
+
+tbody > tr {
+  background-color: color.with-name(white);
+  padding: {
+    left: 1em;
+    right: 1em;
+  };
+
+  border: {
+    bottom: {
+      width: 1em;
+      style: solid;
+      color: color.with-name(light-gray);;
+    };
+  };
+
+  &:hover {
+    background-color: aliceblue;
+  }
+}
+
+td {
+  max-width: 10em;
+}

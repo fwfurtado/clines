@@ -1,0 +1,17 @@
+@use "../common/color";
+@use "../components/text";
+
+.selected {
+  @extend .bold;
+  text-decoration: underline;
+}
+
+.link {
+  color: color.with-name(black);
+  margin: 1em;
+
+  &--dark {
+    @extend .link;
+    color: color.with-name(yellow);
+  }
+}

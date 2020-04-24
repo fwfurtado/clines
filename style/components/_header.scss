@@ -1,0 +1,18 @@
+@use "../common/color";
+@use "../common/size";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: color.with-name(yellow);
+  height: 7em;
+}
+
+.header--logo {
+  margin: {
+    top: auto;
+    bottom: auto;
+    left: 7em;
+  };
+}

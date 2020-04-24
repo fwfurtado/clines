@@ -1,0 +1,14 @@
+@use "size";
+
+$fonts: (
+  roboto: "Roboto",
+  open-sans: "Open Sans"
+);
+
+
+@mixin of($font-name, $size, $style: normal) {
+  font-family: map-get($fonts, $font-name), sans-serif;
+  font-size: size.of($size);
+  font-weight: size.weight-of($size);
+  font-style: $style;
+}

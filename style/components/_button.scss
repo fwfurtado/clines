@@ -1,0 +1,37 @@
+@use "../common/color";
+@use "../common/size";
+
+.btn {
+  color: color.with-name(black);
+  background-color: transparent;
+  font-size: size.of(small);
+  line-height: size.of(small);
+
+  margin: {
+    top: 1em;
+    bottom: 1em;
+  };
+
+  border: {
+    width: 2px;
+    color: color.with-name(black);
+    style: solid;
+  }
+
+  &--block {
+    display: block;
+    width: 98%;
+  }
+
+  &--dark {
+    @extend .btn;
+
+    background-color: color.with-name(black);
+
+    border: {
+      color: color.with-name(yellow);
+    };
+
+    color: color.with-name(yellow);
+  }
+}

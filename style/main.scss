@@ -1,0 +1,42 @@
+@use "common";
+
+@import "components";
+@import "pages/login";
+
+.no-border {
+  border: none;
+}
+
+.center {
+  margin: {
+    left: auto;
+    right: auto;
+  };
+}
+
+.vertical-center {
+  margin: {
+    top: auto;
+    bottom: auto;
+  };
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+h1 {
+  font-size: common.size-of(large);
+  font-weight: bold;
+  margin: {
+    top: auto;
+    bottom: auto;
+  };
+}
+
+body {
+  height: 100%;
+}

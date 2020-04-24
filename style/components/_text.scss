@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "../common/size";
+
+.error {
+  color: red;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+$cases: ("upper": uppercase, "lower": lowercase);
+
+@mixin to($case) {
+  text-transform: map.get($cases, $case);
+}
+
+@each $name, $case in $cases {
+  .#{$name} {
+    @include to($name)
+  }
+}
+
+@mixin with-size($size) {
+  font-size: size.of($size);
+  line-height: size.of($size);
+}
+
+@each $name, $size in size.$sizes {
+  .#{$name} {
+    @include with-size($name);
+  }
+}

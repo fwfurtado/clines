@@ -1,0 +1,69 @@
+@use "../common/color";
+
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: color.with-name(light-gray);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-label {
+
+  margin: 1em;
+
+  &--dark {
+    @extend .input-label;
+    color: color.with-name(white);
+  }
+}
+
+select {
+  height: 3em;
+  padding: 1em;
+}
+
+
+.input {
+  margin: 1em;
+  font-size: 1em;
+  line-height: 3em;
+  border: none;
+
+  &--dark {
+    @extend .input;
+    background-color: color.with-name(alpha-gray);
+  }
+  &--error {
+    outline: red solid 1px;
+  }
+}
+
+.input::placeholder {
+      padding-left: 1em;
+}
+
+input {
+  padding: {
+    left: 1em;
+  };
+}
+
+input:disabled {
+  background-color: color.with-name(gray);
+}
+
+select:disabled {
+  background-color: color.with-name(gray);
+}
+
+.errors {
+  margin: {
+    left: 1em;
+  }
+}

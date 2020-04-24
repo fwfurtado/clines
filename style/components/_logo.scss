@@ -1,0 +1,31 @@
+@use "../common/size";
+
+$logo-filename: '/images/logo';
+
+.logo {
+  display: block;
+  height: 5em;
+  width: 17em;
+
+  background: {
+    image: url($logo-filename + '.svg');
+    position: center;
+    repeat: no-repeat;
+    size: contain;
+  }
+
+  &--dark {
+    @extend .logo;
+    background: {
+      image: url($logo-filename + '-dark.svg');
+    }
+  }
+}
+
+@each $name, $size in size.$sizes {
+  .logo--#{$name} {
+    height: calc(5 * #{$size});
+    width: calc(17 * #{$size});
+  }
+}
+
